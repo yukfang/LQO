@@ -32,7 +32,7 @@ readStream.on('data', (chunk) => {
     const loanapproval = items[8]
     const value = items[9]
 
-    // console.log(`${req_id} ${lead_id} ${register} ${chuoe} ${loanapply} ${loanapproval} ${value}`)
+    console.log(`${req_id} ${lead_id} ${register} ${chuoe} ${loanapply} ${loanapproval} ${value}`)
 
     if(req_id.includes('2023')) {
         records.push({
@@ -40,6 +40,8 @@ readStream.on('data', (chunk) => {
         })
     }
   }
+
+  console.log(`records=${records}`)
 
   // store the last line as the new buffer
   buffer = lines[lines.length - 1];

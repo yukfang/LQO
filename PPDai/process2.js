@@ -12,6 +12,7 @@ const delay = (ms) => new Promise((res, rej) => {
 async function generate() {
   await delay(5);
 
+  console.log(`record = ${records}`)
   console.table(await records)
 }
 
@@ -27,6 +28,7 @@ const token = 'c3c8010673384de0a781b45443489b52f5395a0a'
 async function process() {
   await generate();
   for(let i = 0; i < records.length; i++) {
+    console.log(records[i])
     await postback(records[i])
   }
 }
